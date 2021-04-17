@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+span {
+    color: cornsilk;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock{
+    position: relative;
+    width: 600px;
+    height: 300px;
+    border-radius: 20px;
+    border: 10px solid tomato;
+    background-color: #222;
+}
+
+/* Ayub */
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    position: absolute;
+    font-size: 1.4rem;
+    color: tomato;
+    left: 75%;
+    top: 30%;
+}
+
+
+/******** Hours *********/
+
+.clock-hours {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    left: 60px;
+    bottom: 50px;
+    filter: blur(.5px);
+    background-color: tomato;
+    border-radius: 5px;
+    perspective: 200px;
+}
+
+.clock-hours span {
+    font-size: 7rem;
+}
+
+.clock-hours-change-front {
+    position: absolute;
+    background-color: tomato;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform: rotateX(-0deg);
+    backface-visibility: hidden;
+    border-radius: 5px 5px 0 0;
+
+}
+
+#hoursChangeFace {
+margin-top: 15px;
+
+}
+
+.clock-hours-change-back  {
+    position: absolute;
+    background-color: tomato;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom;
+    transform: rotateY(180deg) rotateX(0deg);
+    transform-origin: bottom;
+    backface-visibility: hidden;
+    border-radius: 5px 5px 0 0;
+    transform-style: preserve-3d;
+    overflow: hidden;
+
+}
+
+#hoursChangeBack {
+    margin-bottom: -65px;
+    transform: rotate(180deg);
+}
+
+
+
+/******** Minutes *********/
+
+.clock-minutes {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    left: 270px;
+    bottom: 50px;
+    background-color: tomato;
+    perspective: 200px;
+    z-index: 10;
+    border-radius: 5px;
+    filter: blur(.5px);
+}
+
+.clock-minutes span {
+    font-size: 5rem;
+}
+.clock-minutes-change-front {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    top: 0;
+    transform-origin: bottom;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    background-color: tomato;
+    animation: none;
+    border-radius: 5px 5px 0 0;
+}
+.clock-minutes-change-front span {
+    margin-top: 14.2px;
+    font-size: 5rem;
+    
+}
+
+.clock-minutes-change-back {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: tomato;
+    top: 0;
+    transform: rotateX(-0deg) rotateY(180deg);
+    width: 120px;
+    height: 60px;
+    backface-visibility: hidden;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    animation: none;
+    border-radius: 5px 5px 0 0;
+    
+}
+.clock-minutes-change-back span {
+    transform: rotate(180deg);
+    margin-bottom: -46px;
+    font-size: 5rem;
+}
+
+@keyframes clock-ani-f {
+    0% {transform: rotateX(-0deg) ;}
+    100%{transform:rotateX(-180deg);}
+    
+}
+@keyframes clock-ani-b {
+    0% {transform: rotateX(-0deg) rotateY(180deg);}
+    100%{transform:rotateX(-180deg) rotateY(180deg) ;}
+    
+}
+
+
+/******** Seconds *********/
+
+.clock-seconds {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 400px;
+    bottom: 50px;
+    background-color: tomato;
+    filter: blur(.5px);
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.clock-seconds span {
+    font-size: 1.1rem;
+}
+
+.glass {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    z-index: 100;
+}
